@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Execution Report : SCRUM-10-2026-11-15-01:01</title>
+<style>
+body{margin:0;background:#19191B;color:#fff;font-family:system-ui,"Segoe UI",Arial,sans-serif;padding:24px}
+h1{font-size:1.5rem;margin:0 0 4px} h2{margin-top:32px}
+.meta{color:#8C8E92} .banner{display:inline-block;background:#FF5410;color:#19191B;font-weight:700;
+padding:8px 16px;border-radius:4px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin-top:8px}
+th,td{border:1px solid #8C8E92;padding:8px;text-align:left;vertical-align:top}
+th{background:#8C8E92;color:#19191B} td:first-child{white-space:nowrap} .reason{color:#8C8E92;font-size:.9rem}
+</style></head><body>
+<h1>Execution Report : SCRUM-10-2026-11-15-01:01</h1>
+<div class="meta">SCRUM-10 &middot; 2026-11-15 01:01</div>
+<div class="banner">Overall: PARTIAL &middot; 50.0% (9 of 18 passed)</div>
+<h2>Acceptance criteria</h2>
+<table><tr><th>Criterion</th><th>Tests run</th><th>Result</th></tr>
+<tr><td>AC-1: The page displays a Username field, a Password field, and a Register button.</td><td>1</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>AC-2: The Password field masks the characters typed.</td><td>1</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>AC-3: When the user enters a valid username and password and clicks Register, the page displays &#34;HELLO WORLD&#34;.</td><td>1</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>AC-4: If Username or Password is empty, clicking Register shows &#34;Username and password are required&#34; and does not display &#34;HELLO WORLD&#34;.</td><td>3</td>
+<td>&#10008; Failed</td></tr>
+<tr><td>AC-5: Username must be 4–20 characters, letters and numbers only; otherwise the page shows &#34;Invalid username&#34;.</td><td>7</td>
+<td>&#10008; Failed</td></tr>
+<tr><td>AC-6: Password must be at least 8 characters and contain at least one number; otherwise the page shows &#34;Invalid password&#34;.</td><td>5</td>
+<td>&#10008; Failed</td></tr>
+</table>
+<h2>Test cases</h2>
+<table><tr><th>ID</th><th>Criterion</th><th>Type</th><th>Scenario</th><th>Result</th></tr>
+<tr><td>TC-1</td><td>AC-1</td><td>positive</td><td>Registration form shows all required controls</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-2</td><td>AC-2</td><td>positive</td><td>Password field masks typed characters</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-3</td><td>AC-3</td><td>positive</td><td>Valid username and password shows HELLO WORLD</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-4</td><td>AC-4</td><td>negative</td><td>Empty username shows required message</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to contain text &#39;re.compile(&#39;Username\\ and\\ password\\ are\\ required&#39;, re.IGNORECASE)&#39; Actual value: Username is required. Call log: - Expect &#34;to_contain_text&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-5</td><td>AC-4</td><td>negative</td><td>Empty password shows required message</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to contain text &#39;re.compile(&#39;Username\\ and\\ password\\ are\\ required&#39;, re.IGNORECASE)&#39; Actual value: Password is required. Call log: - Expect &#34;to_contain_text&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-6</td><td>AC-4</td><td>edge</td><td>Both fields empty shows required message</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to contain text &#39;re.compile(&#39;Username\\ and\\ password\\ are\\ required&#39;, re.IGNORECASE)&#39; Actual value: Username is required. Call log: - Expect &#34;to_contain_text&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-7</td><td>AC-5</td><td>positive</td><td>Alphanumeric username within length is accepted</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-8</td><td>AC-5</td><td>boundary</td><td>Username of 4 characters is accepted</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-9</td><td>AC-5</td><td>boundary</td><td>Username of 20 characters is accepted</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-10</td><td>AC-5</td><td>boundary</td><td>Username of 3 characters is rejected</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to be visible Actual value: hidden Call log: - Expect &#34;to_be_visible&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-11</td><td>AC-5</td><td>boundary</td><td>Username of 21 characters is rejected</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to be visible Actual value: hidden Call log: - Expect &#34;to_be_visible&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-12</td><td>AC-5</td><td>negative</td><td>Username with special characters is rejected</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to be visible Actual value: hidden Call log: - Expect &#34;to_be_visible&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-13</td><td>AC-5</td><td>edge</td><td>Username containing a space is rejected</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to be visible Actual value: hidden Call log: - Expect &#34;to_be_visible&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-14</td><td>AC-6</td><td>positive</td><td>Password with letters and a number is accepted</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-15</td><td>AC-6</td><td>boundary</td><td>Password of 8 characters with a number is accepted</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-16</td><td>AC-6</td><td>boundary</td><td>Password of 7 characters with a number is rejected</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to contain text &#39;re.compile(&#39;Invalid\\ password&#39;, re.IGNORECASE)&#39; Actual value: Password must be at least 8 characters. Call log: - Expect &#34;to_contain_text&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-17</td><td>AC-6</td><td>negative</td><td>Password of 8 letters without a number is rejected</td>
+<td>&#10008; Failed
+<div class="reason">AssertionError: Locator expected to be visible Actual value: hidden Call log: - Expect &#34;to_be_visible&#34; get_by_test_id(&#34;error&#34;) with timeout 5000ms</div></td></tr>
+<tr><td>TC-18</td><td>AC-6</td><td>edge</td><td>Password of only digits and 8 characters is accepted</td>
+<td>&#10004; Passed</td></tr>
+</table>
+</body></html>

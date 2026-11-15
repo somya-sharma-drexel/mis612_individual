@@ -1,1 +1,1 @@
-Feature: smoke test
+Feature: smoke test v2

@@ -1,0 +1,12 @@
+streamlit>=1.40
+anthropic>=0.40
+requests>=2.32
+PyGithub>=2.5
+python-dotenv>=1.0
+Jinja2>=3.1
+pytest>=8.0
+pytest-bdd>=7.3
+pytest-playwright>=0.6
+pytest-json-report>=1.5
+playwright>=1.48
+ruff>=0.8

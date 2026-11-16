@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registration</title>
+  <!-- Poppins loads without blocking the page; if it is unavailable the fallback fonts are used. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;800&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="layout">
+    <header class="intro" data-testid="header">
+      <span class="block block-yellow" aria-hidden="true"></span>
+      <span class="block block-teal" aria-hidden="true"></span>
+      <h1>JOIN US<small>CREATE YOUR ACCOUNT</small></h1>
+    </header>
+
+    <div class="art" aria-hidden="true"><span class="ring ring-1"></span><span class="ring ring-2"></span></div>
+
+    <main>
+      <h2>Welcome</h2>
+      <form id="register-form" data-testid="form" novalidate>
+        <label for="username">Username</label>
+        <input id="username" name="username" type="text" data-testid="username"
+               placeholder="Enter your username" autocomplete="off">
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" data-testid="password"
+               placeholder="Enter your password" autocomplete="off">
+
+        <p id="error" class="error" data-testid="error" role="alert" hidden></p>
+
+        <button type="submit" data-testid="register">Register</button>
+      </form>
+
+      <p id="success" class="success" data-testid="success" role="status" hidden>HELLO WORLD</p>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

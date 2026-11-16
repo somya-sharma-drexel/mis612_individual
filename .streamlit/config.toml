@@ -1,0 +1,23 @@
+# QA agent app palette, sampled from the WeHR dashboard reference (60-30-10):
+# near-white #FAFAFA / white 60%, navy #121843 30%, coral #FF5151 10%.
+[theme]
+base = "light"
+primaryColor = "#FF5151"
+backgroundColor = "#FAFAFA"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#121843"
+font = "serif"
+
+[theme.sidebar]
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FAFAFA"
+
+[server]
+headless = true
+port = 8501
+
+[client]
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

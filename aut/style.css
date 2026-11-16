@@ -1,0 +1,105 @@
+/* Registration page. Palette (60-30-10) sampled from the signup reference design:
+   white 60%, deep teal #007074 30%, yellow #FDD25D 10%.
+   Contrast: white on teal 5.9:1, dark teal #043133 on white 14.1:1, on yellow 9.8:1. */
+:root {
+  --white: #FFFFFF;
+  --panel: #FCFEFF;
+  --teal: #007074;
+  --teal-light: #419498;
+  --yellow: #FDD25D;
+  --ink: #043133;      /* headings */
+  --text: #454545;     /* labels and body */
+  --field: #EFF0F2;    /* input background */
+  --placeholder: #5F656B;
+  --error: #B3261E;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--text);
+  font-family: Poppins, "Segoe UI", system-ui, -apple-system, Arial, sans-serif;
+}
+
+.layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr 1fr;
+  gap: 0;
+}
+
+/* Left: big headline with the yellow square and teal block */
+.intro { position: relative; display: flex; align-items: center; padding: 0 48px; overflow: hidden; }
+.block { position: absolute; left: 0; display: block; }
+.block-yellow { top: 0; left: 15%; width: 180px; height: 150px; background: var(--yellow); }
+.block-teal { bottom: 0; width: 180px; height: 110px; background: var(--teal); }
+.intro h1 {
+  position: relative; margin: 0; z-index: 1;
+  font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 800; line-height: 1;
+  letter-spacing: -0.02em; color: var(--text);
+}
+.intro h1 small {
+  display: block; margin-top: 12px;
+  font-size: clamp(1rem, 2.2vw, 2rem); font-weight: 800; letter-spacing: 0;
+}
+
+/* Middle: rounded teal panel with yellow outlined circles (stands in for the reference photo) */
+.art {
+  position: relative; margin: 8px 0; border-radius: 28px; overflow: hidden;
+  background: linear-gradient(160deg, var(--teal) 0%, var(--teal-light) 55%, #007E82 100%);
+}
+.ring { position: absolute; border: 3px solid var(--yellow); border-radius: 50%; }
+.ring-1 { width: 320px; height: 320px; left: -110px; bottom: -150px; }
+.ring-2 { width: 220px; height: 220px; left: -60px; bottom: -100px; }
+
+/* Right: the form */
+main {
+  background: var(--panel);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 32px 56px;
+}
+main h2 { margin: 0 0 24px; text-align: center; font-size: 1.75rem; font-weight: 600; color: var(--ink); }
+
+form { display: flex; flex-direction: column; gap: 6px; width: 100%; max-width: 360px; margin: 0 auto; }
+label { font-size: 0.8rem; font-weight: 500; color: var(--ink); }
+input {
+  background: var(--field); color: var(--ink);
+  border: 2px solid transparent; border-radius: 4px;
+  padding: 13px 14px; margin-bottom: 14px;
+  font: inherit; font-size: 0.85rem;
+}
+input::placeholder { color: var(--placeholder); }
+input:focus-visible { outline: none; border-color: var(--teal); background: var(--white); }
+
+button {
+  align-self: center; min-width: 190px;
+  background: var(--teal); color: var(--white);
+  border: 0; border-radius: 3px; padding: 12px 24px; margin-top: 6px;
+  font: inherit; font-size: 1rem; font-weight: 500; cursor: pointer;
+}
+button:hover { background: #005C60; }
+button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+
+.error { margin: 0 0 4px; font-size: 0.85rem; font-weight: 500; color: var(--error); }
+.error::before { content: "\26A0\FE0F  "; }
+
+.success {
+  align-self: center; margin: 28px 0 0;
+  background: var(--yellow); color: var(--ink);
+  padding: 14px 28px; border-radius: 6px; white-space: nowrap;
+  font-size: clamp(1.4rem, 2.2vw, 1.9rem); font-weight: 800; letter-spacing: 0.04em;
+}
+
+[hidden] { display: none !important; }
+
+/* Narrow screens: stack; the decorative panel is dropped */
+@media (max-width: 1000px) {
+  .layout { grid-template-columns: 1fr; }
+  .art { display: none; }
+  .intro { padding: 56px 24px 24px; }
+  .block-yellow { left: auto; right: 0; width: 100px; height: 90px; }
+  .block-teal { display: none; }
+  main { padding: 24px 20px 48px; }
+}

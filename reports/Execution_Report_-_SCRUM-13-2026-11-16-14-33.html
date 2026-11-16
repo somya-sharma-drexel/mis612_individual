@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><title>Execution Report : SCRUM-13-2026-11-16-14:33</title>
+<style>
+body{margin:0;background:#19191B;color:#fff;font-family:system-ui,"Segoe UI",Arial,sans-serif;padding:24px}
+h1{font-size:1.5rem;margin:0 0 4px} h2{margin-top:32px}
+.meta{color:#8C8E92} .banner{display:inline-block;background:#FF5410;color:#19191B;font-weight:700;
+padding:8px 16px;border-radius:4px;margin:16px 0}
+table{border-collapse:collapse;width:100%;margin-top:8px}
+th,td{border:1px solid #8C8E92;padding:8px;text-align:left;vertical-align:top}
+th{background:#8C8E92;color:#19191B} td:first-child{white-space:nowrap} .reason{color:#8C8E92;font-size:.9rem}
+</style></head><body>
+<h1>Execution Report : SCRUM-13-2026-11-16-14:33</h1>
+<div class="meta">SCRUM-13 &middot; 2026-11-16 14:33</div>
+<div class="banner">Overall: PASS &middot; 100.0% (11 of 11 passed)</div>
+<h2>Acceptance criteria</h2>
+<table><tr><th>Criterion</th><th>Tests run</th><th>Result</th></tr>
+<tr><td>AC-1: The registration page shows a Username field, a Password field and a Register button.</td><td>1</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>AC-2: The Password field masks the characters typed.</td><td>2</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>AC-3: When the user enters a valid username and a password of at least 8 characters and clicks Register, the page displays HELLO WORLD.</td><td>3</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>AC-4: When the username or the password is empty, clicking Register does not display HELLO WORLD and an error message is shown.</td><td>3</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>AC-5: When the password is shorter than 8 characters, clicking Register does not display HELLO WORLD and an error message is shown.</td><td>2</td>
+<td>&#10004; Passed</td></tr>
+</table>
+<h2>Test cases</h2>
+<table><tr><th>ID</th><th>Criterion</th><th>Type</th><th>Scenario</th><th>Result</th></tr>
+<tr><td>TC-1</td><td>AC-1</td><td>positive</td><td>Page shows username, password and register controls</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-2</td><td>AC-2</td><td>positive</td><td>Password field is masked when typing a password</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-3</td><td>AC-2</td><td>edge</td><td>Password field is masked for special characters</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-4</td><td>AC-3</td><td>positive</td><td>Valid username and long password shows HELLO WORLD</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-5</td><td>AC-3</td><td>boundary</td><td>Password of exactly 8 characters shows HELLO WORLD</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-6</td><td>AC-3</td><td>edge</td><td>Password with special characters shows HELLO WORLD</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-7</td><td>AC-4</td><td>negative</td><td>Empty username is rejected</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-8</td><td>AC-4</td><td>negative</td><td>Empty password is rejected</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-9</td><td>AC-4</td><td>edge</td><td>Both fields empty is rejected</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-10</td><td>AC-5</td><td>boundary</td><td>Password of 7 characters is rejected</td>
+<td>&#10004; Passed</td></tr>
+<tr><td>TC-11</td><td>AC-5</td><td>negative</td><td>Single character password is rejected</td>
+<td>&#10004; Passed</td></tr>
+</table>
+</body></html>
